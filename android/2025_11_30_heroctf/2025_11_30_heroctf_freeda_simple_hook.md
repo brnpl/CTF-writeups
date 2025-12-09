@@ -224,10 +224,10 @@ Instead of using Frida to bypass root detection at runtime, an alternative appro
 ## Analyzing RootBeer implementation
 
 The `RootBeer.isRooted()` method in Java performs multiple checks and returns `true` if any of them detect root access:
-![isRooted java](_images/2025_11_30_heroctf_freeda_simple_hook1.png)
+![isRooted java](../_images/2025_11_30_heroctf_freeda_simple_hook1.png)
 
 The corresponding smali bytecode shows the same logic at a lower level:
-![isRooted smali](_images/2025_11_30_heroctf_freeda_simple_hook2.png)
+![isRooted smali](../_images/2025_11_30_heroctf_freeda_simple_hook2.png)
 
 ## Patching the APK
 The `isRooted()` method in `RootBeer.smali` is examined. The method performs multiple root detection checks and branches to `:cond_1` and `:goto_0` labels if any check succeeds, ultimately returning `0x1 (true)` to indicate root detection:
@@ -319,10 +319,10 @@ After modifying the smali file, the APK is rebuilt and signed.
 
 Visual comparison of the application before and after the patch:
 
-![APK before paching](_images/2025_11_30_heroctf_freeda_simple_hook3.png)
+![APK before paching](../_images/2025_11_30_heroctf_freeda_simple_hook3.png)
 
 
-![APK after paching](_images/2025_11_30_heroctf_freeda_simple_hook4.png)
+![APK after paching](../_images/2025_11_30_heroctf_freeda_simple_hook4.png)
 
 
 

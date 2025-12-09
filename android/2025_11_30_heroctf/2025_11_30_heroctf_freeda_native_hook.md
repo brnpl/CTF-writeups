@@ -179,7 +179,7 @@ This discrepancy is a common occurrence in decompiled code - Ghidra sometimes mi
 To determine the actual return value and behavior of `check_root()`, dynamic analysis using Frida is performed to observe the function's behavior at runtime.
 
 Here's the offset of the `check_root()` function in Ghidra:
-![offset check_root()](_images/2025_11_30_heroctf_freeda_native_hook1.png)
+![offset check_root()](../_images/2025_11_30_heroctf_freeda_native_hook1.png)
 
 A Frida script is written to intercept `check_root()` and examine its return value.
 ```js
@@ -240,7 +240,7 @@ A complete Frida script is then developed to:
 2. Hook `get_flag()` to capture the actual flag string after bypassing the root check;
 
 Here's the offset of the `get_flag()` function in Ghidra:
-![offset get_flag()](_images/2025_11_30_heroctf_freeda_native_hook2.png)
+![offset get_flag()](../_images/2025_11_30_heroctf_freeda_native_hook2.png)
 
 ```js
 const LIB = "libv3.so";
